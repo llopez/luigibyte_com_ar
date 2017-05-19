@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://luigibyte.com.ar//feed.xml" rel="self" type="application/atom+xml" /><link href="http://luigibyte.com.ar//" rel="alternate" type="text/html" /><updated>2017-05-19T17:01:14-03:00</updated><id>http://luigibyte.com.ar//</id><title type="html">Luigi’s Tech Blog</title><subtitle>I’m Luis, a software developer focused on the open source.
+</subtitle><author><name>Luis Lopez</name></author><entry><title type="html">What is IoT?</title><link href="http://luigibyte.com.ar//iot/2017/05/08/what-is-iot.html" rel="alternate" type="text/html" title="What is IoT?" /><published>2017-05-08T16:38:06-03:00</published><updated>2017-05-08T16:38:06-03:00</updated><id>http://luigibyte.com.ar//iot/2017/05/08/what-is-iot</id><content type="html" xml:base="http://luigibyte.com.ar//iot/2017/05/08/what-is-iot.html">&lt;h2 class=&quot;section-heading&quot;&gt;The Internet of things&lt;/h2&gt;
+
+&lt;p&gt;The Internet of things (IoT) is the inter-networking of physical devices, buildings, and other items embedded with electronics, software, sensors, actuators, and network connectivity which enable these objects to collect and exchange data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/iot.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;span class=&quot;caption text-muted&quot;&gt;Internet Of Things, self explanatory image&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine that you can control your house remotely from your cell phone, table or computer.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;turn on lights&lt;/li&gt;
+  &lt;li&gt;unlock doors&lt;/li&gt;
+  &lt;li&gt;open a window&lt;/li&gt;
+  &lt;li&gt;water plants&lt;/li&gt;
+  &lt;li&gt;see what is happening in your house when you are not there.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I am describing a future where everything will me conected to the internet even people.&lt;/p&gt;
+
+&lt;p&gt;There are no limits&lt;/p&gt;</content><author><name>Luis Lopez</name></author><summary type="html">The Internet of things</summary></entry></feed>
