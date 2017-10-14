@@ -1,1 +1,1 @@
-Sitemap: http://luigibyte.com.ar/sitemap.xml
+Sitemap: /sitemap.xml

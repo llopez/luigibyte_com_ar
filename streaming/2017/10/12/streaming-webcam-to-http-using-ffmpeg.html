@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="All that is necessary for the triumph of evil is that good men do nothing. Keep trying new things. Do always something different.">
+  <title>Streaming webcam to HTTP using FFmpeg</title>
+  <meta name="description" content="ffmpeg is an amazing program, you can do lots of crazy things with it.">
 
   <link rel="stylesheet" href="/assets/font-awesome.min.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/about/">
+  <link rel="canonical" href="/streaming/2017/10/12/streaming-webcam-to-http-using-ffmpeg.html">
   <link rel="alternate" type="application/rss+xml" title="Luigi&#39;s Blog" href="/feed.xml">
   
   
@@ -85,27 +85,46 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Streaming webcam to HTTP using FFmpeg</h1>
+    <p class="post-meta">
+      <time datetime="2017-10-12T23:00:00-03:00" itemprop="datePublished">
+        
+        Oct 12, 2017
+      </time>
+      </p>
   </header>
 
-  <div class="post-content">
-    <p>I’m Luis, a <strong>software developer</strong> focused on the <strong>open source</strong>.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p><code class="highlighter-rouge">ffmpeg</code> is an amazing program, you can do lots of crazy things with it.</p>
 
-<p>During my career I have been working with several people from whom I learned a lot, working with people is a great way to grow.</p>
+<p>In this opportunity I will teach you how to stream your webcam to <code class="highlighter-rouge">http</code> in <code class="highlighter-rouge">mjpeg</code> format.</p>
 
-<p>I have more than ten years of experience with <strong>Ruby</strong>, I have used <strong>Ruby on Rails</strong> for more that 8 years, I love <strong>linux</strong>, the <strong>cloud</strong>, <strong>IoT</strong>, the union between the <strong>software</strong> and the <strong>hardware</strong>.</p>
+<p>In order to accomplish this, we will use the <code class="highlighter-rouge">ffserver</code> program that comes with <code class="highlighter-rouge">ffmpeg</code>.</p>
 
-<p>I’m truly passionate about what I do and always eager to do it better.</p>
+<p><code class="highlighter-rouge">ffserver</code> allows us to configure the streaming url, and with <code class="highlighter-rouge">ffmpeg</code> we will redirect the output of our webcam to there.</p>
 
-<p>Also I’m always interested in hearing from colleagues, so feel free to contact me if you’d like to connect.</p>
+<p>Example <code class="highlighter-rouge">ffserver</code> configuration file</p>
 
-<p>Finally, if you have an idea and you don’t know how to make it real, I will be glad to hear what you have to say.</p>
+<script src="https://gist.github.com/llopez/28bc6ee7a1f0650bda5d812b98c79009.js"></script>
+
+<p>Start <code class="highlighter-rouge">ffserver</code>, use the -f options to specify the configuration file</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  ffserver <span class="nt">-f</span> ffserver.conf</code></pre></figure>
+
+<p>Redirect the webcam output to the <code class="highlighter-rouge">ffserver</code> feed</p>
+
+<h1 id="macos">MacOS</h1>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-i</span> <span class="s2">"0"</span> http://localhost:8090/cam.ffm</code></pre></figure>
+
+<p>Then, you can see your webcam at <code class="highlighter-rouge">http://localhost:8090/cam.mpjpeg</code></p>
 
   </div>
 
+  
 </article>
 
       </div>

@@ -1,54 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://luigibyte.com.ar/feed.xml" rel="self" type="application/atom+xml" /><link href="http://luigibyte.com.ar/" rel="alternate" type="text/html" /><updated>2017-05-24T12:16:40-03:00</updated><id>http://luigibyte.com.ar/</id><title type="html">Luigi’s Tech Blog</title><subtitle>I’m Luis, a software developer focused on the open source.
-</subtitle><author><name>Luis Lopez</name></author><entry><title type="html">ESP8266</title><link href="http://luigibyte.com.ar/iot/2017/05/22/esp8266.html" rel="alternate" type="text/html" title="ESP8266" /><published>2017-05-22T15:00:00-03:00</published><updated>2017-05-22T15:00:00-03:00</updated><id>http://luigibyte.com.ar/iot/2017/05/22/esp8266</id><content type="html" xml:base="http://luigibyte.com.ar/iot/2017/05/22/esp8266.html">&lt;h1 id=&quot;what-is-esp8266&quot;&gt;What is ESP8266?&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-10-13T21:18:03-03:00</updated><id>/</id><title type="html">Luigi’s Blog</title><subtitle>All that is necessary for the triumph of evil  is that good men do nothing. Keep trying new things.  Do always something different.</subtitle><entry><title type="html">Streaming webcam to HTTP using FFmpeg</title><link href="/streaming/2017/10/12/streaming-webcam-to-http-using-ffmpeg.html" rel="alternate" type="text/html" title="Streaming webcam to HTTP using FFmpeg" /><published>2017-10-12T23:00:00-03:00</published><updated>2017-10-12T23:00:00-03:00</updated><id>/streaming/2017/10/12/streaming-webcam-to-http-using-ffmpeg</id><content type="html" xml:base="/streaming/2017/10/12/streaming-webcam-to-http-using-ffmpeg.html">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt; is an amazing program, you can do lots of crazy things with it.&lt;/p&gt;
 
-&lt;p&gt;ESP8266 is a chip with which manufacturers are making wirelessly networkable micro-controller modules. More specifically, ESP8266 is a system-on-a-chip (SoC) with capabilities for:&lt;/p&gt;
+&lt;p&gt;In this opportunity I will teach you how to stream your webcam to &lt;code class=&quot;highlighter-rouge&quot;&gt;http&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;mjpeg&lt;/code&gt; format.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;2.4 GHz Wi-Fi (802.11 b/g/n, supporting WPA/WPA2)&lt;/li&gt;
-  &lt;li&gt;General-purpose input/output (16 GPIO)&lt;/li&gt;
-  &lt;li&gt;Inter-Integrated Circuit (I²C)&lt;/li&gt;
-  &lt;li&gt;Analog-to-digital conversion (10-bit ADC)&lt;/li&gt;
-  &lt;li&gt;Serial Peripheral Interface (SPI)&lt;/li&gt;
-  &lt;li&gt;I²S interfaces with DMA (sharing pins with GPIO)&lt;/li&gt;
-  &lt;li&gt;UART (on dedicated pins, plus a transmit-only UART can be enabled on GPIO2)&lt;/li&gt;
-  &lt;li&gt;Pulse-width modulation (PWM)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;In order to accomplish this, we will use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ffserver&lt;/code&gt; program that comes with &lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;It employs a 32-bit RISC CPU based on the Tensilica Xtensa L106 running at 80 MHz (or overclocked to 160 MHz). It has a 64 KB boot ROM, 64 KB instruction RAM and 96 KB data RAM. External flash memory can be accessed through SPI.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ffserver&lt;/code&gt; allows us to configure the streaming url, and with &lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt; we will redirect the output of our webcam to there.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/esp8266-chip.jpg&quot; alt=&quot;esp9266 chip&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;ESP8266 Chip&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Example &lt;code class=&quot;highlighter-rouge&quot;&gt;ffserver&lt;/code&gt; configuration file&lt;/p&gt;
 
-&lt;p&gt;We cannot use the chip as it comes. We need to add some electronics around it to be able to enjoy his capabilities. Hopefuly for us, various vendors have created a multitude of &lt;strong&gt;modules&lt;/strong&gt; containing the ESP8266 chip at their cores. Those modules just expose to us some common pins like: vcc, gnd, gpio, etc…&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/llopez/28bc6ee7a1f0650bda5d812b98c79009.js&quot;&gt;&lt;/script&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/esp8266-variants.jpg&quot; alt=&quot;esp9266 modules&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;ESP8266 Variants&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Start &lt;code class=&quot;highlighter-rouge&quot;&gt;ffserver&lt;/code&gt;, use the -f options to specify the configuration file&lt;/p&gt;
 
-&lt;p&gt;The &lt;strong&gt;esp01&lt;/strong&gt; is one of the more common modules. It has just 2 gpio but for the most projects this is enough.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  ffserver &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ffserver.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/esp8266-pinout.png&quot; alt=&quot;esp8266 pinout&quot; /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;caption text-muted&quot;&gt;ESP8266 Pinout&lt;/span&gt;&lt;/p&gt;</content><author><name>Luis Lopez</name></author><summary type="html">What is ESP8266?</summary></entry><entry><title type="html">What is IoT?</title><link href="http://luigibyte.com.ar/iot/2017/05/08/what-is-iot.html" rel="alternate" type="text/html" title="What is IoT?" /><published>2017-05-08T16:38:06-03:00</published><updated>2017-05-08T16:38:06-03:00</updated><id>http://luigibyte.com.ar/iot/2017/05/08/what-is-iot</id><content type="html" xml:base="http://luigibyte.com.ar/iot/2017/05/08/what-is-iot.html">&lt;h1 id=&quot;the-internet-of-things&quot;&gt;The Internet of things&lt;/h1&gt;
+&lt;p&gt;Redirect the webcam output to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ffserver&lt;/code&gt; feed&lt;/p&gt;
 
-&lt;p&gt;The Internet of things (IoT) is the inter-networking of physical devices, buildings, and other items embedded with electronics, software, sensors, actuators, and network connectivity which enable these objects to collect and exchange data.&lt;/p&gt;
+&lt;h1 id=&quot;macos&quot;&gt;MacOS&lt;/h1&gt;
 
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/iot.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;span class=&quot;caption text-muted&quot;&gt;Internet Of Things, self explanatory image&lt;/span&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  ffmpeg &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; avfoundation &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt; http://localhost:8090/cam.ffm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Imagine that you can control your house remotely from your cell phone, table or computer.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;turn on lights&lt;/li&gt;
-  &lt;li&gt;unlock doors&lt;/li&gt;
-  &lt;li&gt;open a window&lt;/li&gt;
-  &lt;li&gt;water plants&lt;/li&gt;
-  &lt;li&gt;see what is happening in your house when you are not there.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I am describing a future where everything will me conected to the internet even people.&lt;/p&gt;
-
-&lt;p&gt;There are no limits&lt;/p&gt;</content><author><name>Luis Lopez</name></author><summary type="html">The Internet of things</summary></entry></feed>
+&lt;p&gt;Then, you can see your webcam at &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8090/cam.mpjpeg&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">ffmpeg is an amazing program, you can do lots of crazy things with it.</summary></entry></feed>

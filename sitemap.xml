@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://luigibyte.com.ar/iot/2017/05/08/what-is-iot.html</loc>
-<lastmod>2017-05-08T16:38:06-03:00</lastmod>
+<loc>/streaming/2017/10/12/streaming-webcam-to-http-using-ffmpeg.html</loc>
+<lastmod>2017-10-12T23:00:00-03:00</lastmod>
 </url>
 <url>
-<loc>http://luigibyte.com.ar/iot/2017/05/22/esp8266.html</loc>
-<lastmod>2017-05-22T15:00:00-03:00</lastmod>
+<loc>/about/</loc>
 </url>
 <url>
-<loc>http://luigibyte.com.ar/about/</loc>
-</url>
-<url>
-<loc>http://luigibyte.com.ar/contact/</loc>
-</url>
-<url>
-<loc>http://luigibyte.com.ar/</loc>
+<loc>/</loc>
 </url>
 </urlset>
